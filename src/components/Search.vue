@@ -14,6 +14,7 @@
       </svg>
     </div>
     <input
+      v-model="searchText"
       type="text"
       placeholder="Search"
       class="
@@ -37,7 +38,9 @@
 <script>
 export default {
   name: "Search",
-  props: ["searchText"],
+  props: {
+    searchText: String,
+  },
 };
 </script>
 

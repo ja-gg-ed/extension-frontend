@@ -15,6 +15,8 @@ module.exports = {
                 primary: '#6CB2B2',
                 back: '#CAE3E3',
                 teal: colors.teal,
+                header: '#A1CECE',
+                headback: '#E4F1F1'
 
 
             }

@@ -20,6 +20,7 @@
         font-body
         block
         w-full
+        ring-1 ring-gray-300
         pl-10
         py-2
         px-3

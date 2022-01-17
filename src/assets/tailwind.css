@@ -6,6 +6,36 @@
 
 @tailwind utilities;
 
+@layer utilities {
+
+     /* Scroll thumb styles */
+    .scrollbar::-webkit-scrollbar {
+      width: .3rem;
+      height: 0.35rem;
+    }
+    .scrollbar::-webkit-scrollbar-thumb {
+      background: #CAE3E3; 
+      border-radius: 0.25rem;
+    }
+    .scrollbar::-webkit-scrollbar-thumb:active {
+      background-color: #AFD5D5;
+    }
+    .scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #AFD5D5; 
+      box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Scroll track styles (Background) */
+    .scrollbar::-webkit-scrollbar-track {
+      background: #fff;
+      border-radius: 4px;
+    }
+    .scrollbar::-webkit-scrollbar-track:hover, 
+    .scrollbar::-webkit-scrollbar-track:active {
+      background: #fff;
+    }
+}
+
 .btn {
   @apply px-2
     py-2
@@ -22,5 +52,14 @@
     uppercase
     flex
     items-center
-    justify-between;
+    justify-between
+    cursor-pointer;
+}
+
+.table-head{
+@apply border border-gray-200 px-2
+}
+
+.tablerow {
+@apply text-sm text-gray-600 text-center p-2 border
 }

@@ -2,7 +2,7 @@
   <div class="relative rounded-sm shadow-sm w-full">
     <div class="absolute inset-y-0 left-0 pl-3 flex items-center">
       <svg
-        class="absolute text-teal-500 h-5 w-5"
+        class="absolute text-primary h-5 w-5"
         viewBox="0 0 20 20"
         fill="currentColor"
       >
@@ -26,7 +26,7 @@
         text-gray-800
         rounded-md
         border border-gray-200
-        focus:outline-none focus:ring-1 focus:ring-teal-500
+        focus:outline-none focus:ring-1 focus:ring-primary
         caret-teal-500
       "
     />

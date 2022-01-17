@@ -103,14 +103,15 @@
                   border-b border-gray-200
                 "
               >
-                <span class="text-red-700"
-                  >Failed Tiles: 1265959599595 1265959599595 1265959599595
+                <span class="text-gray-600"
+                  >Failed Tiles: <span id="failedTiles" class="text-red-700">1265959599595 1265959599595 1265959599595
                   1265959599595 1265959599595 1265959599595 1265959599595
                   1265959599595 1265959599595 1265959599595 1265959599595
                   1265959599595 1265959599595 1265959599595 1265959599595
-                  1265959599595 1265959599595 1265959599595 1265959599595
+                  1265959599595 1265959599595 1265959599595 1265959599595</span>
                 </span>
                 <span
+                @click="runJob"
                   class="
                     text-xs text-center
                     bg-yellow-400
@@ -159,6 +160,17 @@ export default {
   methods: {
     showDetails() {
       this.showDetailCard = !this.showDetailCard;
+    },
+    runJob() {
+      var r = document.createRange();
+      r.selectNode(document.getElementById("failedTiles"));
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(r);
+      document.execCommand("copy");
+      window.getSelection().removeAllRanges();
+      window.open(
+        "https://main.gitlab.in.here.com/3dds/vtt/p3dc-production-jobs/correct-p3dc-lots-for-tiles/-/pipelines/new"
+      );
     },
   },
 };

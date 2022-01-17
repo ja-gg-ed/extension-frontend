@@ -34,12 +34,12 @@
         </thead>
         <tbody>
           <tr>
-            <td class="tablerow font-bold text-gray-700">521734</td>
+            <td class="tablerow font-bold">521734</td>
             <td class="tablerow">EEU_SAINT_PETERSBURG</td>
             <td class="tablerow">88</td>
             <td class="tablerow">88</td>
             <td class="tablerow">88</td>
-            <td class="tablerow">88</td>
+            <td class="tablerow"><span class="failed">15</span></td>
             <td class="tablerow">88</td>
             <td class="tablerow">88</td>
             <td class="tablerow">88</td>
@@ -49,6 +49,7 @@
             <td class="tablerow">88</td>
             <td class="tablerow uppercase font-semibold">
               <span
+                @click="showDetails"
                 class="
                   text-xs
                   tracking-widest
@@ -66,71 +67,82 @@
           </tr>
         </tbody>
       </table>
-      <div class="mt-2 rounded bg-gray-100 px-2 ring-1 ring-gray-300 hidden">
-        <div class="flex justify-center border-b border-header">
-          <span
-            class="
-              font-medium
-              text-gray-500 text-center
-              uppercase
-              text-md
-              tracking-widest
-            "
-            >Details
-          </span>
-        </div>
-        <div class="">
-          <div class="mt-2 flex">
-            <div
+        <div
+          v-if="showDetailCard"
+          class="
+            mt-2
+            rounded
+            bg-gray-100
+            px-2
+            ring-1 ring-gray-300
+            transition
+            ease-in
+          "
+        >
+          <div class="flex justify-center border-b border-header">
+            <span
               class="
-                text-sm
-                flex
-                justify-between
-                items-center
                 font-medium
-                border-b border-gray-200
+                text-gray-500 text-center
+                uppercase
+                text-md
+                tracking-widest
               "
-            >
-              <span class="text-red-700"
-                >Failed Tiles: 1265959599595 1265959599595 1265959599595
-                1265959599595 1265959599595 1265959599595 1265959599595
-                1265959599595 1265959599595 1265959599595 1265959599595
-                1265959599595 1265959599595 1265959599595 1265959599595
-                1265959599595 1265959599595 1265959599595 1265959599595
-              </span>
-              <span
-                class="
-                  text-xs text-center
-                  bg-yellow-400
-                  text-gray-800
-                  px-2
-                  py-1
-                  w-28
-                  uppercase
-                  rounded-md
-                  tracking-wide
-                  cursor-pointer
-                  hover:bg-yellow-600 hover:text-white
-                "
-                >Run Job</span
-              >
-            </div>
+              >Details
+            </span>
           </div>
-          <div class="mt-1">
-            <div class="flex justify-between items-center w-full mt-1">
-              <span class="font-medium text-sm text-gray-500 uppercase"
-                >Cause:</span
+          <div class="">
+            <div class="mt-2 flex">
+              <div
+                class="
+                  text-sm
+                  flex
+                  justify-between
+                  items-center
+                  font-medium
+                  border-b border-gray-200
+                "
               >
-              <span class="font-medium text-sm text-gray-500 uppercase"
-                >Duration:
-              </span>
-              <span class="font-medium text-sm text-gray-500 uppercase"
-                >Date:</span
-              >
+                <span class="text-red-700"
+                  >Failed Tiles: 1265959599595 1265959599595 1265959599595
+                  1265959599595 1265959599595 1265959599595 1265959599595
+                  1265959599595 1265959599595 1265959599595 1265959599595
+                  1265959599595 1265959599595 1265959599595 1265959599595
+                  1265959599595 1265959599595 1265959599595 1265959599595
+                </span>
+                <span
+                  class="
+                    text-xs text-center
+                    bg-yellow-400
+                    text-gray-800
+                    px-2
+                    py-1
+                    w-28
+                    uppercase
+                    rounded-md
+                    tracking-wide
+                    cursor-pointer
+                    hover:bg-yellow-600 hover:text-white
+                  "
+                  >Run Job</span
+                >
+              </div>
+            </div>
+            <div class="mt-1">
+              <div class="flex justify-between items-center w-full mt-1">
+                <span class="font-medium text-sm text-gray-500 uppercase"
+                  >Cause:</span
+                >
+                <span class="font-medium text-sm text-gray-500 uppercase"
+                  >Duration:
+                </span>
+                <span class="font-medium text-sm text-gray-500 uppercase"
+                  >Date:</span
+                >
+              </div>
             </div>
           </div>
         </div>
-      </div>
     </div>
   </div>
 </template>
@@ -138,9 +150,20 @@
 <script>
 export default {
   name: "Card",
+  data() {
+    return {
+      showDetailCard: false,
+    };
+  },
   props: Object,
+  methods: {
+    showDetails() {
+      this.showDetailCard = !this.showDetailCard;
+    },
+  },
 };
 </script>
 
 <style>
+
 </style>

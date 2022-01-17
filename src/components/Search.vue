@@ -1,5 +1,5 @@
 <template>
-  <div class="relative rounded-sm shadow-sm w-full">
+  <div class="relative rounded-sm shadow-sm w-full h-10">
     <div class="absolute inset-y-0 left-0 pl-3 flex items-center">
       <svg
         class="absolute text-primary h-5 w-5"

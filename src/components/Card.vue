@@ -101,7 +101,7 @@
         </div>
         <div class="">
           <div class="mt-2">
-            <div
+            <div v-if="job.report.failed_tiles.length > 0"
               class="
                 text-sm
                 flex
@@ -112,10 +112,10 @@
               "
             >
               <span class="text-gray-600 mr-2">Failed Tiles: </span>
-              <span id="failedTiles ml-2" class="text-red-700">{{
+              <span id="failedTiles" class="text-red-700 ml-2">{{
                 job.report.failed_tiles.join(" ")
               }}</span>
-              <span
+              <span 
                 @click="runJob"
                 class="
                   text-xs text-center

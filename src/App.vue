@@ -57,7 +57,6 @@
 </template>
 
 <script>
-import Search from "./components/Search.vue";
 import Card from "./components/Card.vue";
 export default {
   name: "App",
@@ -68,7 +67,6 @@ export default {
     };
   },
   components: {
-    Search,
     Card,
   },
   async created() {
